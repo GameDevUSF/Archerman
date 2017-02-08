@@ -7,6 +7,8 @@ public class MovementScript : MonoBehaviour
     private float speed = 25f;
     public float jumpForce = 5;
     public float movementForce = 5;
+    public float backwardsForce = 5f;
+    public float interpolation = 0.5f;
 
     bool walking;
     bool standing;
@@ -15,10 +17,15 @@ public class MovementScript : MonoBehaviour
     public string collisionLayerName = "Ground";
     private int layerMask;
 
+    GameObject enemy;
+
+    int collidedWithEnemy;
+
     void Start()
     {
         charBody = GetComponent<Rigidbody2D>();
         layerMask = LayerMask.NameToLayer(collisionLayerName);
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 
     void FixedUpdate()
@@ -48,6 +55,24 @@ public class MovementScript : MonoBehaviour
     {
         facingDir(move);
         charBody.velocity = new Vector2(move * movementForce, charBody.velocity.y);
+
+        if (collidedWithEnemy == 1)
+        {
+            //damage dealt, and blow backwards
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag.Equals("Enemy"))
+        {
+            collidedWithEnemy = 1;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        collidedWithEnemy = 0;
     }
 
     /// <summary>
