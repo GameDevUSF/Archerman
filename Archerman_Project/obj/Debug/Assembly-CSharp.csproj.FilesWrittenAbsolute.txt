@@ -1,0 +1,17 @@
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/obj/Debug/Assembly-CSharp.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/UnityEngine.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/UnityEditor.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/Mono.Cecil.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/Unity.DataContract.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/joelgroff/Desktop/GDC-SciFi-Platformer/Prototype_Project/Temp/bin/Debug/Mono.Cecil.Mdb.dll
