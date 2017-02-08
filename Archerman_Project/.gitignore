@@ -1,0 +1,6 @@
+Library/
+ProjectSettings/
+Temp/
+Assembly-CSharp.csproj
+Prototype_Project.sln
+*.userprefs
