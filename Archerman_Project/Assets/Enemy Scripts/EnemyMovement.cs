@@ -4,15 +4,20 @@ using System.Collections;
 public class EnemyMovement : MonoBehaviour
 {
     private float speed = 25f;
-    public float jumpForce = 5;
-    public float movementForce = 0.5f;
+    public float jumpForce = 4;
+    public float movementForce = 4f;
+    public float backwardsForce = 5f;
+    public float interpolation = 0.5f;
 
     private Rigidbody2D charBody;
     public string collisionLayerName = "Ground";
     private int layerMask;
 
     GameObject player;
+    HealthScript playerHealth;
     int collidedWithPlayer;
+
+    public int damage;
     
     // Use this for initialization
     void Start ()
@@ -20,6 +25,7 @@ public class EnemyMovement : MonoBehaviour
         charBody = GetComponent<Rigidbody2D>();
         layerMask = LayerMask.NameToLayer(collisionLayerName);
         player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<HealthScript>();
     }
 	
 	// Update is called once per frame
@@ -30,17 +36,11 @@ public class EnemyMovement : MonoBehaviour
         {
             if ((gameObject.transform.position.x - player.transform.position.x) < 5 && (gameObject.transform.position.x - player.transform.position.x) > 0)
             {
-                if (collidedWithPlayer == 0)
-                {
-                    Move(-1, 1);
-                }
+                Move(-1, 1);
             }
             else if ((gameObject.transform.position.x - player.transform.position.x) > -5 && (gameObject.transform.position.x - player.transform.position.x) < 0)
             {
-                if (collidedWithPlayer == 0)
-                {
-                    Move(1, 1);
-                }
+                Move(1, 1);
             }
         }
     }
@@ -50,13 +50,12 @@ public class EnemyMovement : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             collidedWithPlayer = 1;
-            float savedTime = Time.time;
-            if(Time.time - savedTime  >= 3.0f)
-            {
-                collidedWithPlayer = 0;
-            }
         }
+    }
 
+    void OnCollisionExit2D(Collision2D other)
+    {
+            collidedWithPlayer = 0;
     }
 
     public void Move(int move, int moving)
@@ -64,8 +63,16 @@ public class EnemyMovement : MonoBehaviour
         if (moving == 1)
         {
             //facingDir(move);
-            charBody.velocity = new Vector2(move * movementForce, charBody.velocity.y);
+            charBody.velocity = Vector2.Lerp(new Vector2(0, 0), new Vector2(move * movementForce, charBody.velocity.y), interpolation);
+
+            if (collidedWithPlayer == 1)
+            {
+                //damage dealt, and blow backwards
+                playerHealth.takeDamage(damage);
+                charBody.velocity = Vector2.Lerp(new Vector2(move * movementForce, charBody.velocity.y), new Vector2(move * -backwardsForce, jumpForce), interpolation);
+            }
         }
+
         else if (moving == 0)
         {
             return;
