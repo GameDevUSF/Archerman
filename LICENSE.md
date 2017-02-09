@@ -1,4 +1,7 @@
 Working with a Team
-1). Jean-Luc Hayes
-2). 
-3).
+
+Lead Programmer: Jean-Luc Hayes
+Programmer: Kim Ngan Thai
+Level Design: Mohammed Ameen Khan
+Art: 
+
